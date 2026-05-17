@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Roy's Chase</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260517v4" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260517v5" />
 </head>
 <body>
 <main class="container py-4 py-lg-5">
@@ -22,11 +22,7 @@
     <div class="row g-4 align-items-center">
       <div class="col-lg-7">
         <h2 class="mb-2">Welcome, <span id="welcomeName">Roy</span>! 🎩</h2>
-        <p class="text-white-50 mb-3">Play a Cash Builder, take an offer, then outrun the Chaser.</p>
-
-        <div id="voiceStatus" class="d-flex flex-wrap gap-2 mb-3"></div>
-        <button id="voiceTestBtn" class="btn btn-outline-light roy-btn px-3 py-2" type="button">🔊 Voice test</button>
-        <div id="voiceTestNote" class="text-white-50 mt-2" style="font-size:.95rem"></div>
+        <p class="text-white-50 mb-3">Start a game, answer fast, then enjoy the host commentary with your own audio lines.</p>
 
         <div class="row g-3 mt-1">
           <div class="col-md-6">
@@ -34,30 +30,23 @@
             <input id="playerName" class="form-control form-control-lg" value="Roy" />
           </div>
           <div class="col-md-6">
-            <label class="form-label">Best win so far</label>
-            <div class="form-control form-control-lg bg-transparent text-white" style="border-radius:1.25rem"><span id="bestScore">£0</span></div>
+            <label class="form-label">Audio</label>
+            <div class="form-check form-switch mt-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="toggleSound" checked />
+              <label class="form-check-label" for="toggleSound">Sound effects + voice lines</label>
+            </div>
+            <div class="text-white-50 mt-1" style="font-size:.95rem">Add MP3s in <code>assets/audio/host</code> (see README.txt there).</div>
           </div>
         </div>
+
         <div class="d-flex flex-wrap gap-3 mt-4">
           <button id="startBtn" class="btn btn-warning roy-btn px-4 py-3">Start a New Game</button>
         </div>
       </div>
       <div class="col-lg-5">
         <div class="roy-card p-3" style="background:rgba(0,0,0,.15)">
-          <div class="fw-bold mb-2">Comfort settings</div>
-          <div class="form-check form-switch mt-2">
-            <input class="form-check-input" type="checkbox" role="switch" id="toggleBigType" checked />
-            <label class="form-check-label" for="toggleBigType">Big text & buttons</label>
-          </div>
-          <div class="form-check form-switch mt-2">
-            <input class="form-check-input" type="checkbox" role="switch" id="toggleContrast" />
-            <label class="form-check-label" for="toggleContrast">High contrast mode</label>
-          </div>
-          <div class="form-check form-switch mt-2">
-            <input class="form-check-input" type="checkbox" role="switch" id="toggleSound" checked />
-            <label class="form-check-label" for="toggleSound">Sound + voice (recommended ON)</label>
-          </div>
-          <div class="text-white-50 mt-2">Question pool: <b>500+</b></div>
+          <div class="fw-bold mb-2">What you upload</div>
+          <div class="text-white-50">You’ll be generating an original UK game-show host voice (male, older, warm) and saving MP3 lines into the project folder.</div>
         </div>
       </div>
     </div>
@@ -156,7 +145,8 @@
   <footer class="mt-4 text-center text-white-50">© <span id="yearNow"></span> • Made for Roy</footer>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="assets/js/questions.js?v=20260517v4"></script>
-<script src="assets/js/app.js?v=20260517v4"></script>
+<script src="assets/js/questions.js?v=20260517v5"></script>
+<script src="assets/js/app.js?v=20260517v5"></script>
+<script>document.getElementById('yearNow').textContent = new Date().getFullYear();</script>
 </body>
 </html>
